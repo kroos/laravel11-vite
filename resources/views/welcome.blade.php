@@ -23,6 +23,12 @@
 		</div>
 
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
+			<p class="">Placeholder text to demonstrate some <a href="#" data-toggle="tooltip" data-bs-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="#" data-toggle="tooltip" data-bs-title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how <a href="#" data-toggle="tooltip" data-bs-title="Another one here too">these tooltips on links</a> can work in practice, once you use them on <a href="#" data-toggle="tooltip" data-bs-title="The last tip!">your own</a> site or project.
+</p>
+
+		</div>
+
+		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
 			<div class="row col-sm-6 border border-primary">
 				<label for="select2" class="col-form-label col-sm-4">Test Select 2:</label>
 				<div class="col-sm-8">
@@ -56,20 +62,136 @@
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
 			<table id="table_id" class="table table-sm table-hover">
 				<thead>
-					<tr>
-						<th>Column 1</th>
-						<th>Column 2</th>
-					</tr>
+						<tr>
+								<th>Name</th>
+								<th>Position</th>
+								<th>Office</th>
+								<th>Age</th>
+								<th>Start date</th>
+								<th>Salary</th>
+						</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Row 1 Data 1</td>
-						<td>Row 1 Data 2</td>
-					</tr>
-					<tr>
-						<td>Row 2 Data 1</td>
-						<td>Row 2 Data 2</td>
-					</tr>
+						<tr>
+								<td>Tiger Nixon</td>
+								<td>System Architect</td>
+								<td>Edinburgh</td>
+								<td>61</td>
+								<td>25 Apr 2011</td>
+								<td>$320,800</td>
+						</tr>
+						<tr>
+								<td>Garrett Winters</td>
+								<td>Accountant</td>
+								<td>Tokyo</td>
+								<td>63</td>
+								<td>25 Jul 2011</td>
+								<td>$170,750</td>
+						</tr>
+						<tr>
+								<td>Ashton Cox</td>
+								<td>Junior Technical Author</td>
+								<td>San Francisco</td>
+								<td>66</td>
+								<td>12 Jan 2009</td>
+								<td>$86,000</td>
+						</tr>
+						<tr>
+								<td>Cedric Kelly</td>
+								<td>Senior Javascript Developer</td>
+								<td>Edinburgh</td>
+								<td>22</td>
+								<td>29 Mar 2012</td>
+								<td>$433,060</td>
+						</tr>
+						<tr>
+								<td>Airi Satou</td>
+								<td>Accountant</td>
+								<td>Tokyo</td>
+								<td>33</td>
+								<td>28 Nov 2008</td>
+								<td>$162,700</td>
+						</tr>
+						<tr>
+								<td>Brielle Williamson</td>
+								<td>Integration Specialist</td>
+								<td>New York</td>
+								<td>61</td>
+								<td>2 Dec 2012</td>
+								<td>$372,000</td>
+						</tr>
+						<tr>
+								<td>Herrod Chandler</td>
+								<td>Sales Assistant</td>
+								<td>San Francisco</td>
+								<td>59</td>
+								<td>6 Aug 2012</td>
+								<td>$137,500</td>
+						</tr>
+						<tr>
+								<td>Rhona Davidson</td>
+								<td>Integration Specialist</td>
+								<td>Tokyo</td>
+								<td>55</td>
+								<td>14 Oct 2010</td>
+								<td>$327,900</td>
+						</tr>
+						<tr>
+								<td>Colleen Hurst</td>
+								<td>Javascript Developer</td>
+								<td>San Francisco</td>
+								<td>39</td>
+								<td>15 Sep 2009</td>
+								<td>$205,500</td>
+						</tr>
+						<tr>
+								<td>Sonya Frost</td>
+								<td>Software Engineer</td>
+								<td>Edinburgh</td>
+								<td>23</td>
+								<td>13 Dec 2008</td>
+								<td>$103,600</td>
+						</tr>
+						<tr>
+								<td>Jena Gaines</td>
+								<td>Office Manager</td>
+								<td>London</td>
+								<td>30</td>
+								<td>19 Dec 2008</td>
+								<td>$90,560</td>
+						</tr>
+						<tr>
+								<td>Quinn Flynn</td>
+								<td>Support Lead</td>
+								<td>Edinburgh</td>
+								<td>22</td>
+								<td>3 Mar 2013</td>
+								<td>$342,000</td>
+						</tr>
+						<tr>
+								<td>Charde Marshall</td>
+								<td>Regional Director</td>
+								<td>San Francisco</td>
+								<td>36</td>
+								<td>16 Oct 2008</td>
+								<td>$470,600</td>
+						</tr>
+						<tr>
+								<td>Haley Kennedy</td>
+								<td>Senior Marketing Designer</td>
+								<td>London</td>
+								<td>43</td>
+								<td>18 Dec 2012</td>
+								<td>$313,500</td>
+						</tr>
+						<tr>
+								<td>Tatyana Fitzpatrick</td>
+								<td>Regional Director</td>
+								<td>London</td>
+								<td>19</td>
+								<td>17 Mar 2010</td>
+								<td>$385,750</td>
+						</tr>
 				</tbody>
 			</table>
 		</div>
@@ -93,6 +215,11 @@
 	(function($){
 		$(document).ready(function(){
 
+			// tooltip
+			$(document).ready(function(){
+				$('[data-toggle="tooltip"]').tooltip();
+			});
+
 			$('#button1').click(function(){
 				alert("Thanks");
 			});
@@ -103,13 +230,28 @@
 
 			console.log('test');
 
-			$('#select2').select2();
+			$('#select2').select2({
+				theme: 'bootstrap-5',
+			});
 
 			console.log(moment().format('D MMMM YYYY'));
 
-			$("#dp").datepicker();
+			$("#dp").datepicker({
+				dateFormat: 'yy-mm-dd',
+			});
 
-			$('#table_id').DataTable();
+			DataTable.datetime('D MMM YYYY');
+			$('#table_id').DataTable({
+				'lengthMenu': [ [30, 60, 100, -1], [30, 60, 100, 'All'] ],
+				'columnDefs': [
+					{ type: 'date', 'targets': [4] },
+				],
+				'order': [[ 0, 'desc' ]],
+				'responsive': true,
+				'autoWidth': false,
+				'fixedHeader': true,
+				'dom': 'Bfrtip',
+			});
 
 
 			const ctx = document.getElementById('myChart');
@@ -142,6 +284,9 @@
 					momentPlugin,
 					bootstrap5Plugin,
 				],
+				aspectRatio: 1.3,
+				height: 2000,
+				weekNumbers: true,
 				titleFormat: 'D MMMM, YYYY',  // momentPlugin
 				themeSystem: 'bootstrap5',   // bootstrap5Plugin
 				initialView: 'multiMonthYear',
@@ -150,6 +295,14 @@
 					center: 'title',
 					right: 'multiMonthYear,dayGridMonth,timeGridWeek'
 				},
+
+				// events: {
+				// 	url: '{{ route('dashboard') }}',
+				// 	method: 'GET',
+				// 	extraParams: {
+				// 		_token: '{!! csrf_token() !!}',
+				// 	},
+				// },
 
 				events: [
 					{

@@ -18,5 +18,8 @@ export default defineConfig({
 //		alias: {
 //			'jquery-ui': 'jquery-ui/dist/jquery-ui.js'
 //		}
-//	}
+//	},
+	build: {
+			chunkSizeWarningLimit: 1600,
+		},
 });
