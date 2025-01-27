@@ -1,6 +1,11 @@
-// jquery
-import $ from 'jquery/dist/jquery';
-window.$ = window.jQuery = $;
+// Default Laravel bootstrapper, installs axios, jQuery
+import './bootstrap';
+
+// Added: Actual Bootstrap JavaScript dependency
+import 'bootstrap';
+
+// jquery-ui
+import '../../node_modules/jquery-ui/dist/jquery-ui';
 
 // select2
 import select2 from 'select2';
@@ -23,6 +28,9 @@ import 'datatables.net-colreorder-bs5';
 import 'datatables.net-autofill-bs5'
 window.DataTable = DataTable;
 
+// minicolors
+import '@claviska/jquery-minicolors';
+
 // Chart.js
 import Chart from 'chart.js/auto';
 window.Chart = Chart;
@@ -31,14 +39,17 @@ window.Chart = Chart;
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import multiMonthPlugin from "@fullcalendar/multimonth";
 import listPlugin from '@fullcalendar/list';
+import momentPlugin from '@fullcalendar/moment';
+import bootstrap5Plugin from '@fullcalendar/bootstrap5';
 window.Calendar = Calendar;
+window.multiMonthPlugin = multiMonthPlugin;
 window.dayGridPlugin = dayGridPlugin;
 window.timeGridPlugin = timeGridPlugin;
 window.listPlugin = listPlugin;
-
-// Added: Actual Bootstrap JavaScript dependency
-import 'bootstrap';
+window.momentPlugin = momentPlugin;
+window.bootstrap5Plugin = bootstrap5Plugin;
 
 // Added: Popper.js dependency for popover support in Bootstrap
 import '@popperjs/core';
@@ -46,12 +57,3 @@ import '@popperjs/core';
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 Alpine.start();
-
-
-
-
-
-
-
-// Default Laravel bootstrapper, installs axios
-import './bootstrap';

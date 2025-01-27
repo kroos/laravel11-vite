@@ -16,7 +16,7 @@ export default defineConfig({
 	],
 //	resolve: {
 //		alias: {
-//			'$':  'jQuery',
-//		},
-//	},
+//			'jquery-ui': 'jquery-ui/dist/jquery-ui.js'
+//		}
+//	}
 });

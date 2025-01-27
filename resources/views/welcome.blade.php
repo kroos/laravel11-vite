@@ -16,10 +16,10 @@
 </head>
 <body class=" ">
 
-	<div class="container row justify-content-center mx-auto min-vh-100 border border-primary">
+	<div class="container-fluid row justify-content-center mx-auto min-vh-100 border border-primary">
 
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
-			<h1 class="animate__animated animate__bounce">An animated element</h1>
+			<h1 class="text-center animate__animated animate__bounce">An animated element</h1>
 		</div>
 
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
@@ -36,10 +36,20 @@
 		</div>
 
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
+			<div class="row col-sm-6 border border-primary">
+				<label for="dp" class="col-form-label col-sm-4">jQuery-ui Datepicker:</label>
+				<div class="col-sm-8">
+					<input type="text" id="dp" name="datepicker" class="form-control form-control-sm">
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
 			<div class="col-sm-4">
 				<button id="button1" class="m-1 btn btn-primary"><i class="fa-regular fa-user fa-beat"></i> Primary button</button>
 				<button id="button2" class="m-1 btn btn-secondary"><i class="fa-solid fa-bomb fa-beat"></i> secondary button</button>
 				<button id="button3" class="m-1 btn btn-outline-primary"><i class="bi bi-airplane-engines"></i> third button</button>
+				<button id="button4" class="m-1 btn btn-outline-primary"><span class="mdi mdi-ab-testing"></span> fourth button</button>
 			</div>
 		</div>
 
@@ -95,7 +105,9 @@
 
 			$('#select2').select2();
 
-			console.log(moment().format());
+			console.log(moment().format('D MMMM YYYY'));
+
+			$("#dp").datepicker();
 
 			$('#table_id').DataTable();
 
@@ -120,17 +132,66 @@
 				}
 			});
 
-
-
 			let calendarEl = document.getElementById('calendar');
 			let calendar = new Calendar(calendarEl, {
-				plugins: [ dayGridPlugin, timeGridPlugin, listPlugin ],
-				initialView: 'dayGridMonth',
+				plugins: [
+					multiMonthPlugin,
+					dayGridPlugin,
+					timeGridPlugin,
+					listPlugin,
+					momentPlugin,
+					bootstrap5Plugin,
+				],
+				titleFormat: 'D MMMM, YYYY',  // momentPlugin
+				themeSystem: 'bootstrap5',   // bootstrap5Plugin
+				initialView: 'multiMonthYear',
 				headerToolbar: {
 					left: 'prev,next today',
 					center: 'title',
-					right: 'dayGridMonth,timeGridWeek,listWeek'
-				}
+					right: 'multiMonthYear,dayGridMonth,timeGridWeek'
+				},
+
+				events: [
+					{
+						title: 'Event 1',
+						start: '{{ now() }}', // Date of the event
+						description: 'Description of Event 1'
+					},
+					{
+						title: 'Event 2',
+						start: '{{ now()->subdays(2) }}', // Date and time
+						end: '{{ now()->subday() }}', // Optional end time
+						description: 'Description of Event 2'
+					},
+					{
+						title: 'Event 3',
+						start: '{{ now()->subdays(6) }}',
+						description: 'Description of Event 3'
+					}
+				],
+				eventClick: function(info) {
+					// alert(info.event.title + "\n" + info.event.extendedProps.description);
+					swal.fire({
+						title: info.event.title,
+						text: info.event.extendedProps.description,
+						icon: 'info',
+					});
+				},
+				eventDidMount: function(info) {
+					$(info.el).tooltip({
+						title: info.event.extendedProps.description,
+						placement: 'top',
+						trigger: 'hover',
+						container: 'body'
+					});
+				},
+				eventTimeFormat: { // like '14:30:00'
+					hour: '2-digit',
+					minute: '2-digit',
+					second: '2-digit',
+					hour12: true
+				},
+
 			});
 			calendar.render();
 

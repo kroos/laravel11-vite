@@ -2,30 +2,34 @@
 
 Complete integration with module below :
 
+ - **@claviska/jquery-minicolors**
  - **@fortawesome/fontawesome-free**
+ - **@fullcalendar/bootstrap5**
  - **@fullcalendar/core**
  - **@fullcalendar/daygrid**
  - **@fullcalendar/list**
+ - **@fullcalendar/moment**
+ - **@fullcalendar/multimonth**
  - **@fullcalendar/timegrid**
+ - **@mdi/font**
  - **@tailwindcss/forms**
  - **alpinejs**
  - **animate.css**
- - **autoprefixer**
  - **axios**
+ - **bootstrap**
  - **bootstrap-icons**
  - **chart.js**
- - **concurrently**
  - **datatables.net**
  - **datatables.net-autofill-bs5**
  - **datatables.net-bs5**
  - **datatables.net-colreorder-bs5**
  - **datatables.net-fixedheader-bs5**
  - **datatables.net-responsive-bs5**
- - **laravel-vite-plugin**
+ - **jquery**
+ - **jquery-ui**
  - **moment**
- - **postcss**
- - **sass**
  - **select2**
+ - **select2-bootstrap-5-theme**
  - **sweetalert2**
  - **tailwindcss**
  - **vite**
