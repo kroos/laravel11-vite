@@ -1,0 +1,26 @@
+/* bootstrap */
+@import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+
+/* bootstrap-icon */
+@import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+/* fontawesome */
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
+
+/* select2 */
+@import 'select2/src/scss/core.scss';
+
+/* datatable-bs5 */
+@import '../../node_modules/datatables.net-bs5/css/dataTables.bootstrap5.css';
+@import '../../node_modules/datatables.net-responsive-bs5/css/responsive.bootstrap5.css';
+@import '../../node_modules/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.css';
+@import '../../node_modules/datatables.net-colreorder-bs5/css/colReorder.bootstrap5.css';
+
+/* animate.css */
+@import '../../node_modules/animate.css/animate.css';
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
