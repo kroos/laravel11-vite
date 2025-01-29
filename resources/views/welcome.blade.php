@@ -1,31 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-	<title>Laravel</title>
-
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.bunny.net">
-	<link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-	<!-- Styles / Scripts -->
-	@vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
-
-</head>
-<body class=" ">
-
-	<div class="container-fluid row justify-content-center mx-auto min-vh-100 border border-primary">
+@section('content')
+	<div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
 
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
 			<h1 class="text-center animate__animated animate__bounce">An animated element</h1>
 		</div>
 
+		<div class="col-sm-8 row text-center align-items-center m-2 border border-success">
+				<p class="tw-text-3xl tw-font-bold tw-underline">Hello tailwindcss</p>
+				<p>If you want to use tailwindcss class, please prefix it with "tw-". This has been made to resolve conflicts between bootstrap and tailwindcss</p>
+		</div>
+
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
 			<p class="">Placeholder text to demonstrate some <a href="#" data-toggle="tooltip" data-bs-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="#" data-toggle="tooltip" data-bs-title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how <a href="#" data-toggle="tooltip" data-bs-title="Another one here too">these tooltips on links</a> can work in practice, once you use them on <a href="#" data-toggle="tooltip" data-bs-title="The last tip!">your own</a> site or project.
-</p>
-
+			</p>
 		</div>
 
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
@@ -203,17 +192,10 @@
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">
 			<div id="calendar"></div>
 		</div>
-
-		<footer class="py-5 text-center text-sm text-black dark:text-white/70 mx-auto align-self-end border border-primary">
-			Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-		</footer>
-
 	</div>
-</body>
-<script type="module">
-	jQuery.noConflict ();
-	(function($){
-		$(document).ready(function(){
+@endsection
+
+@section('js')
 
 			// tooltip
 			$(document).ready(function(){
@@ -348,12 +330,4 @@
 			});
 			calendar.render();
 
-
-
-
-
-
-		});
-	})(jQuery);
-</script>
-</html>
+@endsection

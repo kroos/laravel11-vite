@@ -1,52 +1,64 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+@extends('layouts.app')
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+@section('content')
+<div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
+	<h3>Sign Up</h3>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+	<form method="POST" action="{{ route('register') }}" id="form" class="needs-validation">
+		@csrf
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+		<div class="form-group row m-2 @error('name') has-error @enderror">
+			<label for="name" class="col-sm-4 col-form-label col-form-label-sm">Name : </label>
+			<div class="col-sm-8">
+				<input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control form-control-sm @error('name') is-invalid @enderror" placeholder="Name">
+				@error('name') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
+			</div>
+		</div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+		<div class="form-group row m-2 @error('email') has-error @enderror">
+			<label for="email" class="col-sm-4 col-form-label col-form-label-sm">Email : </label>
+			<div class="col-sm-8">
+				<input type="text" name="email" id="email" value="{{ old('email') }}" class="form-control form-control-sm @error('email') is-invalid @enderror" placeholder="Email">
+				@error('email') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
+			</div>
+		</div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+		<div class="form-group row m-2 @error('username') has-error @enderror">
+			<label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username : </label>
+			<div class="col-sm-8">
+				<input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control form-control-sm @error('username') is-invalid @enderror" placeholder="Username">
+				@error('username') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
+			</div>
+		</div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+		<div class="form-group row m-2 @error('password') has-error @enderror">
+			<label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password : </label>
+			<div class="col-sm-8">
+				<input type="password" name="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm @error('password') is-invalid @enderror" placeholder="Password">
+				@error('password') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
+			</div>
+		</div>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+		<div class="form-group row m-2 @error('password_confirmation') has-error @enderror">
+			<label for="password_confirmation" class="col-sm-4 col-form-label col-form-label-sm">Password Confirmation : </label>
+			<div class="col-sm-8">
+				<input type="password" name="password_confirmation" id="password_confirmation" value="{{ old('password_confirmation') }}" class="form-control form-control-sm @error('password_confirmation') is-invalid @enderror" placeholder="Password Confirmation">
+				@error('password_confirmation') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
+			</div>
+		</div>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+		<div class="m-2">
+			<button type="submit" class="btn btn-sm btn-primary m-3">
+				{{ __('Register') }}
+			</button>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+			<a class="" href="{{ route('login') }}">
+				{{ __('Already registered?') }}
+			</a>
+		</div>
+	</form>
+</div>
+@endsection
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+@section('js')
+@endsection
