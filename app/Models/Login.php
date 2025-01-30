@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 // use Laravel\Sanctum\HasApiTokens;
 
 // database relationship
-// use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 // use Illuminate\Database\Eloquent\Relations\HasOne;
 // use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 // use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
@@ -29,7 +29,7 @@ class Login extends Authenticatable implements MustVerifyEmail
 	protected $primaryKey = 'id';
 
 	// use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
-	use HasFactory, Notifiable;
+	use HasFactory, Notifiable, SoftDeletes;
 
 	 /**
 	 * The attributes that are mass assignable.
