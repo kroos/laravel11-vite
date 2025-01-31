@@ -5,7 +5,8 @@ import './bootstrap';
 // import '@popperjs/core';
 
 // jquery-ui
-import '../../node_modules/jquery-ui/dist/jquery-ui';
+// import '../../node_modules/jquery-ui/dist/jquery-ui';
+import './jquery-ui-prefix';
 
 // careful between these 2 (bootstrap and jquery-ui), cause it conflicts on "tooltips". this way, we override all components from jquery-ui which results we always use the bootstrap components.
 // Added: Actual Bootstrap JavaScript dependency
