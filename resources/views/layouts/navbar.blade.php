@@ -1,10 +1,10 @@
 <!-- navigator -->
-<nav class="navbar navbar-expand-lg align-self-start bg-primary rounded m-0 mb-1" data-bs-theme="dark" style="--bs-bg-opacity: .25;">
+<nav class="navbar navbar-expand-lg align-self-start bg-primary rounded m-0 mb-1" data-theme="dark" style="--bg-opacity: .25;">
 	<div class="container">
 			<a class="navbar-brand" href="@auth{{ url('/dashboard') }}@else{{ url('/') }}@endauth">
 				{!! config('app.name') !!}<img src="">
 			</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarColor01">
@@ -36,7 +36,7 @@
 			@if (Route::has('login'))
 				@auth
 					<div class="dropdown me-5">
-						<a href="{{ url('/dashboard') }}" class="btn btn-sm btn-outline-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->belongstouser->name }}</a>
+						<a href="{{ url('/dashboard') }}" class="btn btn-sm btn-outline-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">{{ Auth::user()->belongstouser->name }}</a>
 						<ul class="dropdown-menu">
 							<li>
 								<a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="fa-regular fa-user"></i> Profile</a>

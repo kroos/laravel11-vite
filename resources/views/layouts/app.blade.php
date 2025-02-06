@@ -20,7 +20,7 @@ $currentYear = Carbon::now()->year;
 	<link href="" type="image/x-icon" rel="icon" />
 
 	<!-- Styles / Scripts -->
-	@vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
+	@vite(['resources/scss/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
 
 	<!-- Bootswatch Cerulean CSS -->
 	<link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -29,7 +29,7 @@ $currentYear = Carbon::now()->year;
 
 </head>
 
-<body class=" bg-secondary bg-opacity-75">
+<body class="bg-secondary bg-opacity-75">
 	<div class="container-fluid row min-vh-100 align-items-center justify-content-center mx-auto">
 
 		@include('layouts.navbar')
@@ -38,7 +38,22 @@ $currentYear = Carbon::now()->year;
 		</div>
 
 		<div class="container p-3 row justify-content-center m-0">
+			@isset($header)
+			<div class="tw">
+				<div class="bg-white shadow">
+					<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+						{{ $header }}
+					</div>
+				</div>
+			</div>
+			@endisset
+
+			<!-- Page Content -->
+			@isset($slot)
+				<div class="tw">{{ $slot }}</div>
+			@endisset
 			@yield('content')
+
 		</div>
 
 		<div class="container py-3 align-self-end text-center fs-6 text-secondary fw-lighter m-0">
@@ -57,10 +72,6 @@ $currentYear = Carbon::now()->year;
 			@show
 		});
 	})(jQuery);
-</script>
-<script>
-	@section('nonjquery')
-	@show
 </script>
 @livewireScripts
 </html>

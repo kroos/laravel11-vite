@@ -8,8 +8,12 @@
 		</div>
 
 		<div class="col-sm-8 row text-center align-items-center m-2 border border-success">
-				<p class="tw-text-3xl tw-font-bold tw-underline">Hello tailwindcss</p>
-				<p>If you want to use tailwindcss class, please prefix it with "tw-". This has been made to resolve conflicts between bootstrap and tailwindcss</p>
+				<div class="tw">
+					<p class="text-3xl font-bold underline">Hello tailwindcss</p>
+					<button class="btn btn-primary">Bootstrap Button</button>
+				</div>
+				<p>If you want to use tailwindcss class, please wrap it with "tw" class. This has been made to resolve conflicts between bootstrap and tailwindcss</p>
+				<p>{{ __('<div class="tw"><p class="text-3xl font-bold underline">Hello tailwindcss</p></div>') }}</p>
 		</div>
 
 		<div class="col-sm-8 row justify-content-center align-items-center m-2 border border-success">

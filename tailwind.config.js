@@ -8,11 +8,17 @@ export default {
 		'./storage/framework/views/*.php',
 		'./resources/views/**/*.blade.php',
 	],
-	prefix: 'tw-',
+
+	// prefix: 'tw',
+
+	corePlugins: {
+		preflight: false, // Disable Tailwind's reset styles to avoid conflicts
+	},
+
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+				sans: ['Cactus Classical Serif', ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},
