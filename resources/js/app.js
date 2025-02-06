@@ -1,11 +1,11 @@
+import Alpine from 'alpinejs';
+window.Alpine = Alpine;
+Alpine.start();
+
 // Default Laravel bootstrapper, installs axios, jQuery
 import './bootstrap';
 
-// Added: Popper.js dependency for popover support in Bootstrap
-// import '@popperjs/core';
-
 // jquery-ui
-// import '../../node_modules/jquery-ui/dist/jquery-ui';
 import './jquery-ui-prefix';
 
 // careful between these 2 (bootstrap and jquery-ui), cause it conflicts on "tooltips". this way, we override all components from jquery-ui which results we always use the bootstrap components.
@@ -55,7 +55,3 @@ window.timeGridPlugin = timeGridPlugin;
 window.listPlugin = listPlugin;
 window.momentPlugin = momentPlugin;
 window.bootstrap5Plugin = bootstrap5Plugin;
-
-import Alpine from 'alpinejs';
-window.Alpine = Alpine;
-Alpine.start();
