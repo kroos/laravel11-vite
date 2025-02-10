@@ -247,7 +247,7 @@ $('#table_id').DataTable({
 	'order': [[ 0, 'desc' ]],
 	'responsive': true,
 	'autoWidth': false,
-	'fixedHeader': true,
+	// 'fixedHeader': true,
 	'dom': 'Bfrtip',
 });
 
